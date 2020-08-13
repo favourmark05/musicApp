@@ -5,19 +5,20 @@
     </header>
     <main>
       <section class="player">
+        <h2 class="now">Now Playing</h2>
         <h2 class="song-title">
           {{ current.title }} -
           <span>{{ current.artist }}</span>
         </h2>
         <div class="control">
-          <button class="prev" @click="prev">Prev</button>
-          <button class="play" v-if="!isPlaying" @click="play"><i class="fas fa-play icon"></i></button>
-          <button class="pause" v-else @click="pause">Pause</button>
-          <button class="next" @click="next">Next</button>
+          <button class="prev" @click="prev"><strong>Prev</strong></button>
+          <button class="play" v-if="!isPlaying" @click="play"><i class="fas fa-play icn"></i><strong>Play</strong></button>
+          <button class="pause" v-else @click="pause"><strong>Pause</strong></button>
+          <button class="next" @click="next"><strong>Next</strong></button>
         </div>
       </section>
       <section class="playlist">
-        <h3>PlayList</h3>
+        <h3> <strong>PlayList</strong></h3>
         <button
           v-for="song in songs"
           :key="song.src"
@@ -27,7 +28,7 @@
       </section>
     </main>
     <footer>
-      App Built by <a href="mfonidomark.netlify.com"></a>
+      App Built by <a href="https://mfonidomark.netlify.app/" target="_blank">Mfonido Mark</a>
     </footer>
   </div>
 </template>
@@ -59,12 +60,12 @@ export default {
           year: 2013,
           src: require("./assets/Celine Dion- Becos U Love ME.mp3"),
         },
-        {
-          title: "Brass Band Praise",
-          artist: "Ikot ekpene Brass band",
-          year: 2015,
-          src: require("./assets/brass praises mix-1.mp3"),
-        },
+        // {
+        //   title: "Brass Band Praise",
+        //   artist: "Ikot ekpene Brass band",
+        //   year: 2015,
+        //   src: require("./assets/brass praises mix-1.mp3"),
+        // },
       ],
       player: new Audio(),
     };
@@ -140,8 +141,16 @@ export default {
 }
 #app {
   background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&w=1000&q=80');
-  background-size: cover;
-  height: 100%;
+   background-size: cover;
+  background-position: bottom;
+  height: 100vh;
+}
+@media only screen and (min-height : 640px) {
+  #app {
+    background-size: cover;
+    height: 100vh;
+
+  }
 }
 body {
   font-family: sans-serif;
@@ -164,10 +173,11 @@ main {
   padding: 25px;
 }
 .song-title {
-  color: gray;
+  color: rgb(255, 255, 255);
   font-size: 32px;
-  font-weight: 700;
+  font-weight: bolder;
   text-transform: uppercase;
+  /* background-color: rgb(25, 39, 160); */
 }
 .song-title span {
   font-weight: 400;
@@ -218,7 +228,7 @@ button:hover {
    padding: 0px 30px;
 }
 .playlist > h3 {
-  color: black;
+  color: #fff;
   font-size: 45px;
   font-weight: 400;
   margin-bottom: 30px;
@@ -242,5 +252,17 @@ button:hover {
 }
 .icon {
   font-size: 40px;
+}
+footer{
+  text-align: center;
+  font-weight: bolder;
+}
+footer > a {
+  color: #fff;
+}
+.now{
+  color: white;
+  padding: 10px 25px;
+  font-weight: bolder;
 }
 </style>

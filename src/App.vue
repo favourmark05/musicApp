@@ -150,6 +150,11 @@ export default {
     height: auto ;
   }
 }
+@media only screen and (mix-height: 481px) {
+  #app{
+    height: auto ;
+  }
+}
 body {
   font-family: sans-serif;
 }

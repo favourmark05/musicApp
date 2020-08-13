@@ -141,15 +141,13 @@ export default {
 }
 #app {
   background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&w=1000&q=80');
-   background-size: cover;
-  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
 }
-@media only screen and (min-height : 640px) {
-  #app {
-    background-size: cover;
-    height: 100vh;
-
+@media only screen and (max-height: 480px) {
+  #app{
+    height: auto ;
   }
 }
 body {

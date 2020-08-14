@@ -271,7 +271,10 @@ footer{
   font-weight: bolder;
 }
 footer > a {
-  color: #fff;
+  color: rgb(31, 26, 26);
+}
+footer > a:hover {
+  color: rgb(211, 22, 22);
 }
 .now{
   color: white;

@@ -143,7 +143,7 @@ export default {
   background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&w=1000&q=80');
   background-repeat: no-repeat;
   background-size: cover;
-  height: auto;
+  height: 100vh;
 }
 @media only screen and (max-height: 480px) {
   #app{
@@ -152,7 +152,7 @@ export default {
 }
 @media only screen and (min-height: 481px) {
   #app{
-    height: auto ;
+    /* height: auto ; */
   }
 }
 /* @media only screen and (max-width: 480px) {
